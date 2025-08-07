@@ -55,16 +55,17 @@ public class MainManager : MonoBehaviour
         }
         else if (m_GameOver)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
+            // if (Input.GetKeyDown(KeyCode.Space))
+            // {
+            //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // }
         }
     }
 
     void AddPoint(int point)
     {
         m_Points += point;
+        StateTracker.Instance.SetActivePlayerScore(m_Points);
         ScoreText.text = $"Score : {m_Points}";
     }
 
